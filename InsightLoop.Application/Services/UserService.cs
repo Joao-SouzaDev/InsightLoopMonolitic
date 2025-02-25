@@ -33,11 +33,11 @@ namespace InsightLoop.Application.Services
         }
         public IUser GetUserById(Guid userId)
         {
-            return _userRepository.GetById(userId);
+            return _userRepository.GetByIdAsync(userId);
         }
         public IUser GetUserByEmail(string email)
         {
-            return _userRepository.GetByEmail(email);
+            return _userRepository.GetByEmailAsync(email);
         }
     }
 }

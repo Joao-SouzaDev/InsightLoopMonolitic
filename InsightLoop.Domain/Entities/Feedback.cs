@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +15,10 @@ namespace InsightLoop.Domain.Entities
         public string? Comment { get; private set; }
         public int Rating { get; private set; }
         public DateTime CreatedDate { get; private set; }
+        public FeedBackOwner FeedbackOwner { get; private set; }
 
         //Constructor para criação do objeto Feedback
-        public Feedback(Guid productId, Guid userId, string? comment, int rating)
+        public Feedback(Guid productId, Guid userId, string? comment, int rating, FeedBackOwner feedbackOwner)
         {
             Id = Guid.NewGuid();
             ProductId = productId;
@@ -24,6 +26,7 @@ namespace InsightLoop.Domain.Entities
             SetRating(rating);
             SetComment(comment);
             CreatedDate = DateTime.Now;
+            FeedbackOwner = feedbackOwner;
         }
         //Regra para definir a avaliação entre 1 e 5
         private void SetRating(int rating)

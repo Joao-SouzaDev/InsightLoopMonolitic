@@ -9,13 +9,14 @@ namespace InsightLoop.Domain.Entities
     public class Product
     {
         public Guid Id { get; private set; }
-        public string Name { get; private set; }
-        public string Description { get; private set; }
+        public string? Name { get; private set; }
+        public string? Description { get; private set; }
         public decimal Price { get; private set; }
         public Guid ProductOwnerId { get; private set; }
         public DateTime CreatedDate { get; private set; }
+        public ProductOwner ProductOwner { get; private set; }
         //Construtor para criação do objeto Produto
-        public Product(string name, string description, decimal price, Guid productOwnerId)
+        public Product(string? name, string? description, decimal price, Guid productOwnerId, ProductOwner productOwner)
         {
             Id = Guid.NewGuid();
             SetName(name);
@@ -23,9 +24,10 @@ namespace InsightLoop.Domain.Entities
             SetPrice(price);
             ProductOwnerId = productOwnerId;
             CreatedDate = DateTime.UtcNow;
+            ProductOwner = productOwner;
         }
         //Regra para definir o nome do produto
-        private void SetName(string name)
+        private void SetName(string? name)
         {
             if (string.IsNullOrWhiteSpace(name))
             {
@@ -43,7 +45,7 @@ namespace InsightLoop.Domain.Entities
             Price = price;
         }
         //Regra para definir a descrição do produto
-        private void SetDescription(string description)
+        private void SetDescription(string? description)
         {
             if (string.IsNullOrWhiteSpace(description))
             {

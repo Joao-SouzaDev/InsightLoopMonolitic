@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsightLoop.Domain", "Insig
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsightLoop.Application", "InsightLoop.Application\InsightLoop.Application.csproj", "{61651827-BEA7-41ED-9806-F099243EF237}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InsightLoop.Infra", "InsightLoop.Infra\InsightLoop.Infra.csproj", "{BCB4084A-7540-42AB-8B53-A9B9AFB261A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{61651827-BEA7-41ED-9806-F099243EF237}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61651827-BEA7-41ED-9806-F099243EF237}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61651827-BEA7-41ED-9806-F099243EF237}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCB4084A-7540-42AB-8B53-A9B9AFB261A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCB4084A-7540-42AB-8B53-A9B9AFB261A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCB4084A-7540-42AB-8B53-A9B9AFB261A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCB4084A-7540-42AB-8B53-A9B9AFB261A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -27,7 +27,7 @@ namespace InsightLoop.Application.Services
         }
         public Product GetProductById(Guid productId)
         {
-            return _productRepository.GetById(productId);
+            return _productRepository.GetByIdAsync(productId);
         }
     }
 }

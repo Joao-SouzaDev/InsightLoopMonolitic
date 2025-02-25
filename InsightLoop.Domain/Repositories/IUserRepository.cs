@@ -4,6 +4,6 @@ namespace InsightLoop.Domain.Repositories
 {
     public interface IUserRepository : IRepositoryBase<IUser>
     {
-        IUser GetByEmail(string email);
+        IUser GetByEmailAsync(string email);
     }
 }

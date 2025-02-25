@@ -2,7 +2,7 @@
 
 namespace InsightLoop.Domain.Repositories
 {
-    interface IProductOwnerRepository : IRepositoryBase<ProductOwner>
+    public interface IProductOwnerRepository : IRepositoryBase<ProductOwner>
     {
     }
 }

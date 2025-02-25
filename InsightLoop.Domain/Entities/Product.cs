@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InsightLoop.Domain.Entities
 {
-    class Product
+    public class Product
     {
         public Guid Id { get; private set; }
         public string Name { get; private set; }

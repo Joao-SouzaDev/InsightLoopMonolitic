@@ -1,6 +1,6 @@
 ﻿namespace InsightLoop.Domain.Entities
 {
-    interface IUser
+    public interface IUser
     {
         Guid Id { get; }
         string UserName { get; }

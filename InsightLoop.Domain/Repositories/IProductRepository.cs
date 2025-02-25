@@ -2,7 +2,7 @@
 
 namespace InsightLoop.Domain.Repositories
 {
-    interface IProductRepository : IRepositoryBase<Product>
+    public interface IProductRepository : IRepositoryBase<Product>
     {
         IEnumerable<Product> GetByProductOwnerId(Guid productOwnerId);
     }

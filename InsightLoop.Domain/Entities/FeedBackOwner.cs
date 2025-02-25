@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InsightLoop.Domain.Entities
 {
-    sealed class FeedBackOwner
+    public class FeedBackOwner
     {
         public Guid Id { get; private set; }
         public IUser User { get; private set; }

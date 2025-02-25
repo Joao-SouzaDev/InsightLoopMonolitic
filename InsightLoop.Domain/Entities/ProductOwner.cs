@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InsightLoop.Domain.Entities
 {
-    sealed class ProductOwner
+    public class ProductOwner
     {
         public Guid Id { get; private set; }
         public Guid UserId { get; private set; }

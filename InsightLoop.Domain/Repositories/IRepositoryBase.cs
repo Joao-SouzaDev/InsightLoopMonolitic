@@ -1,6 +1,6 @@
 ﻿namespace InsightLoop.Domain.Repositories
 {
-    interface IRepositoryBase<T> where T : class
+    public interface IRepositoryBase<T> where T : class
     {
         T GetById(int id);
         IEnumerable<T> GetAll();

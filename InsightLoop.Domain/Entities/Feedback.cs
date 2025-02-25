@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace InsightLoop.Domain.Entities
 {
-    class Feedback
+    public class Feedback
     {
         public Guid Id { get; private set; }
         public Guid ProductId { get; private set; }

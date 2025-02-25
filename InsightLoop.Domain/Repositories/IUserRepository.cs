@@ -2,7 +2,7 @@
 
 namespace InsightLoop.Domain.Repositories
 {
-    interface IUserRepository : IRepositoryBase<IUser>
+    public interface IUserRepository : IRepositoryBase<IUser>
     {
         IUser GetByEmail(string email);
     }

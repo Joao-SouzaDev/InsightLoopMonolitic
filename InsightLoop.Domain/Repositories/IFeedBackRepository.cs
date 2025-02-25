@@ -2,7 +2,7 @@
 
 namespace InsightLoop.Domain.Repositories
 {
-    interface IFeedBackRepository : IRepositoryBase<Feedback>
+    public interface IFeedBackRepository : IRepositoryBase<Feedback>
     {
         IEnumerable<Feedback> GetByFeedBackOwnerId(Guid feedBackOwnerId);
     }

@@ -1,0 +1,6 @@
+@InsightLoop.AuthApi_HostAddress = http://localhost:5249
+
+GET {{InsightLoop.AuthApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

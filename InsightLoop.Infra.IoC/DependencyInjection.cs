@@ -12,7 +12,7 @@ namespace InsightLoop.Infra.IoC
         public static void AddDataContexts(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseNpgsql(configuration.GetConnectionString("connectionString")));
+                options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
         }
         public static void AddServices(this IServiceCollection services)
         {

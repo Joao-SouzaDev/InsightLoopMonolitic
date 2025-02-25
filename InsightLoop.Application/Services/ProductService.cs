@@ -2,7 +2,7 @@
 using InsightLoop.Domain.Repositories;
 namespace InsightLoop.Application.Services
 {
-    class ProductService
+    public class ProductService
     {
         private readonly IProductRepository _productRepository;
         public ProductService(IProductRepository productRepository)

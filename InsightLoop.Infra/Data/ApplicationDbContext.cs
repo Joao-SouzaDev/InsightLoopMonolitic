@@ -1,6 +1,7 @@
 ﻿using InsightLoop.Domain.Entities;
 using InsightLoop.Infra.Data.Security;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace InsightLoop.Infra.Data
 {
@@ -15,6 +16,11 @@ namespace InsightLoop.Infra.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
         {
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
     }
 }

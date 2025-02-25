@@ -31,7 +31,7 @@ namespace InsightLoop.Application.Services
         {
             _userRepository.Delete(user);
         }
-        public IUser GetUserById(Guid userId)
+        public IUser? GetUserById(Guid userId)
         {
             return _userRepository.GetByIdAsync(userId);
         }

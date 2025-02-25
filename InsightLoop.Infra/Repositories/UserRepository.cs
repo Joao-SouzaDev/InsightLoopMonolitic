@@ -12,7 +12,7 @@ using IUser = InsightLoop.Domain.Entities.IUser;
 
 namespace InsightLoop.Infra.Repositories
 {
-    class UserRepository : IUserRepository
+    public class UserRepository : IUserRepository
     {
         private readonly UserManager<ApplicationUser> _userManager;
         public UserRepository(UserManager<ApplicationUser> userManager)

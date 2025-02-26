@@ -13,10 +13,6 @@ namespace InsightLoop.Infra.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<Feedback> builder)
         {
-            builder.HasOne(feed =>  feed.FeedbackOwner)
-                .WithMany(feedOwner => feedOwner.Feedbacks)
-                .HasPrincipalKey(feed => feed.Id)
-                .HasForeignKey(feedOwner => feedOwner.FeedbackOwner);
         }
     }
 }

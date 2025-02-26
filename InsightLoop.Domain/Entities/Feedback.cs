@@ -11,23 +11,42 @@ namespace InsightLoop.Domain.Entities
     {
         public Guid Id { get; private set; }
         public Guid ProductId { get; private set; }
-        public Guid UserId { get; private set; }
+        public string? UserEmail { get; private set; }
+        public string? UserName { get; private set; }
         public string? Comment { get; private set; }
         public int Rating { get; private set; }
         public DateTime CreatedDate { get; private set; }
-        public FeedBackOwner FeedbackOwner { get; private set; }
 
         //Constructor para criação do objeto Feedback
-        public Feedback(Guid productId, Guid userId, string? comment, int rating, FeedBackOwner feedbackOwner)
+        public Feedback(Guid productId, string userEmail, string? comment, int rating,string userName)
         {
             Id = Guid.NewGuid();
             ProductId = productId;
-            UserId = userId;
+            SetEmail(userEmail);
+            SetUserName(userName);
             SetRating(rating);
             SetComment(comment);
             CreatedDate = DateTime.Now;
-            FeedbackOwner = feedbackOwner;
         }
+
+        private void SetUserName(string userName)
+        {
+            if (string.IsNullOrWhiteSpace(userName))
+            {
+                throw new ArgumentNullException(nameof(userName));
+            }
+            UserName = userName;
+        }
+
+        private void SetEmail(string userEmail)
+        {
+            if (string.IsNullOrWhiteSpace(userEmail))
+            {
+                throw new ArgumentNullException(nameof(userEmail));
+            }
+            UserEmail = userEmail;
+        }
+
         //Regra para definir a avaliação entre 1 e 5
         private void SetRating(int rating)
         {

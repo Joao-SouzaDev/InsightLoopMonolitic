@@ -26,11 +26,6 @@ namespace InsightLoop.Infra.Repositories
             return _context.Feedbacks.ToList();
         }
 
-        public IEnumerable<Feedback> GetByFeedBackOwnerId(Guid feedBackOwnerId)
-        {
-            return _context.Feedbacks.Where(p => p.UserId == feedBackOwnerId).ToList();
-        }
-
         public Feedback? GetByIdAsync(Guid id)
         {
             return _context.Feedbacks.Find(id);

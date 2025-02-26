@@ -11,7 +11,6 @@ namespace InsightLoop.Infra.Data
         public DbSet<ProductOwner> ProductOwners { get; set; }
         public DbSet<ApplicationUser> User { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
-        public DbSet<FeedBackOwner> FeedBackOwners { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)

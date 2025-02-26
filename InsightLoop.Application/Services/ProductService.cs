@@ -13,6 +13,10 @@ namespace InsightLoop.Application.Services
         {
             _productRepository.Add(product);
         }
+        public IEnumerable<Product> GetAll()
+        {
+            return _productRepository.GetAll();
+        }
         public IEnumerable<Product> GetProductsByProductOwnerId(Guid productOwnerId)
         {
             return _productRepository.GetByProductOwnerId(productOwnerId);

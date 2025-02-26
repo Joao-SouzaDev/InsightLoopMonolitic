@@ -15,6 +15,11 @@ namespace InsightLoop.Domain.Entities
         public Guid ProductOwnerId { get; private set; }
         public DateTime CreatedDate { get; private set; }
         public ProductOwner ProductOwner { get; private set; }
+        public Product()
+        {
+            CreatedDate = DateTime.UtcNow;
+
+        }
         //Construtor para criação do objeto Produto
         public Product(string? name, string? description, decimal price, Guid productOwnerId, ProductOwner productOwner)
         {

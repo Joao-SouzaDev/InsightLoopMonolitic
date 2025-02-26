@@ -1,0 +1,6 @@
+@InsightLoop.ProductServico_HostAddress = http://localhost:5225
+
+GET {{InsightLoop.ProductServico_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

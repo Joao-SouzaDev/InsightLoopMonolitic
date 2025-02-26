@@ -10,13 +10,11 @@ namespace InsightLoop.Domain.Entities
     {
         public Guid Id { get; private set; }
         public Guid UserId { get; private set; }
-        public IUser User { get; private set; }
         public ICollection<Product> Products { get; set; } = new List<Product>();
-        public ProductOwner(Guid userId, IUser user)
+        public ProductOwner(Guid userId)
         {
             Id = Guid.NewGuid();
             UserId = userId;
-            User = user;
         }
     }
 }

@@ -18,7 +18,6 @@ namespace InsightLoop.Infra.IoC
         {
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductOwnerRepository, ProductOwnerRepository>();
-            services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IFeedBackRepository, FeedBackRepository>();
         }
     }

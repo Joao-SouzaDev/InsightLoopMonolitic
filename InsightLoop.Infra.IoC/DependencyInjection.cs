@@ -1,4 +1,5 @@
-﻿using InsightLoop.Domain.Repositories;
+﻿using InsightLoop.Application.Services;
+using InsightLoop.Domain.Repositories;
 using InsightLoop.Infra.Data;
 using InsightLoop.Infra.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +20,7 @@ namespace InsightLoop.Infra.IoC
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IProductOwnerRepository, ProductOwnerRepository>();
             services.AddScoped<IFeedBackRepository, FeedBackRepository>();
+            services.AddScoped<ProductService>();
         }
     }
 }

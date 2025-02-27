@@ -1,10 +1,12 @@
 ﻿using InsightLoop.Domain.Entities;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
 namespace InsightLoop.Infra.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<Usuario,UsuarioAcesso,int>
     {
         public DbSet<Product> Products { get; set; }    
         public DbSet<ProductOwner> ProductOwners { get; set; }

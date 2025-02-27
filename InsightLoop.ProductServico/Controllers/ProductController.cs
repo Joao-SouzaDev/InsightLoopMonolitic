@@ -13,9 +13,9 @@ namespace InsightLoop.ProductServico.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-        private readonly IProductRepository _productService;
+        private readonly ProductService _productService;
         private readonly IMapper _mapper;
-        public ProductController(IProductRepository productService,IMapper mapper)
+        public ProductController(ProductService productService,IMapper mapper)
         {
             _productService = productService;
             _mapper = mapper;
@@ -39,7 +39,7 @@ namespace InsightLoop.ProductServico.Controllers
         public IActionResult Post([FromBody] CreateProductRequest createProductRequest)
         {
             var product = _mapper.Map<CreateProductRequest, Product>(createProductRequest);
-            _productService.Add(product);
+            _productService.AddProduct(product);
             return CreatedAtAction(nameof(GetById), new { id = product.Id }, product);
         }
 
@@ -47,7 +47,7 @@ namespace InsightLoop.ProductServico.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(Guid id)
         {
-            var product = _productService.GetByIdAsync(id);
+            var product = _productService.GetProductById(id);
             if(product == null) return NotFound();
             var productResponse = _mapper.Map<Product, GetProductResponse>(product);
             return Ok(productResponse);
@@ -63,10 +63,10 @@ namespace InsightLoop.ProductServico.Controllers
         [HttpPut("{id}")]
         public IActionResult Put(Guid id, [FromBody] CreateProductRequest putProduct)
         {
-            var product = _productService.GetByIdAsync(id);
+            var product = _productService.GetProductById(id);
             if(product == null) return NotFound();
            _mapper.Map(putProduct,product);
-            _productService.Update(product);
+            _productService.UpdateProduct(product);
             return NoContent();
         }
 
@@ -74,9 +74,9 @@ namespace InsightLoop.ProductServico.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(Guid id)
         {
-            var product = _productService.GetByIdAsync(id);
+            var product = _productService.GetProductById(id);
             if (product == null) return NotFound();
-            _productService.Delete(product);
+            _productService.DeleteProduct(product);
             return NoContent();
         }
     }

@@ -11,6 +11,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDataContexts(builder.Configuration);
 builder.Services.AddServices();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+builder.Services.AddAuthentication("Bearer");
+builder.Services.AddAuthorization();
 builder.Services.AddIdentityApiEndpoints<Usuario>().AddEntityFrameworkStores<ApplicationDbContext>();
 var app = builder.Build();
 
@@ -24,7 +27,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-app.MapGroup("auth").MapIdentityApi<Usuario>().WithTags("Autorização");
+app.MapGroup("/api/auth").MapIdentityApi<Usuario>().WithTags("Autorização");
 app.MapControllers();
 
 app.Run();

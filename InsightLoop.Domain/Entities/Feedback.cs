@@ -11,11 +11,14 @@ namespace InsightLoop.Domain.Entities
     {
         public Guid Id { get; private set; }
         public Guid ProductId { get; private set; }
-        public string? UserEmail { get; private set; }
+        public string? useremail { get; private set; }
         public string? UserName { get; private set; }
         public string? Comment { get; private set; }
         public int Rating { get; private set; }
         public DateTime CreatedDate { get; private set; }
+        public Feedback()
+        {
+        }
 
         //Constructor para criação do objeto Feedback
         public Feedback(Guid productId, string userEmail, string? comment, int rating,string userName)
@@ -44,7 +47,7 @@ namespace InsightLoop.Domain.Entities
             {
                 throw new ArgumentNullException(nameof(userEmail));
             }
-            UserEmail = userEmail;
+            useremail = userEmail;
         }
 
         //Regra para definir a avaliação entre 1 e 5
